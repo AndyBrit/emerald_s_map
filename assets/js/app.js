@@ -314,8 +314,6 @@ map = L.map("map", {
   attributionControl: false
 });
 
-alert("I am an alert box!");
-
 /* Layer control listeners that allow for a single markerClusters layer */
 map.on("overlayadd", function(e) {
   if (e.layer === theaterLayer) {
@@ -369,6 +367,8 @@ attributionControl.onAdd = function (map) {
   return div;
 };
 map.addControl(attributionControl);
+
+alert("I am an alert box!");
 
 var zoomControl = L.control.zoom({
   position: "bottomright"
