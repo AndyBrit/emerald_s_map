@@ -314,7 +314,7 @@ map = L.map("map", {
   attributionControl: false
 });
 
-print ("hi")
+alert("I am an alert box!");
 
 /* Layer control listeners that allow for a single markerClusters layer */
 map.on("overlayadd", function(e) {
