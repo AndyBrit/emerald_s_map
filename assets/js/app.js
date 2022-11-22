@@ -307,7 +307,7 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 });
 
 map = L.map("map", {
-  zoom: 7,
+  zoom: 6,
   center: [49.511, 31.948],
   layers: [cartoLight, boroughs, markerClusters, highlight],
   zoomControl: false,
@@ -326,8 +326,6 @@ map.on("overlayadd", function(e) {
   }
 });
 
-alert("I am an alert box1");
-
 map.on("overlayremove", function(e) {
   if (e.layer === theaterLayer) {
     markerClusters.removeLayer(theaters);
@@ -338,8 +336,6 @@ map.on("overlayremove", function(e) {
     syncSidebar();
   }
 });
-
-alert("I am an alert box2");
 
 /* Filter sidebar feature list to only show features in current map bounds */
 map.on("moveend", function (e) {
@@ -371,8 +367,6 @@ attributionControl.onAdd = function (map) {
   return div;
 };
 map.addControl(attributionControl);
-
-alert("I am an alert box3");
 
 var zoomControl = L.control.zoom({
   position: "bottomright"
@@ -410,8 +404,6 @@ var locateControl = L.control.locate({
   }
 }).addTo(map);
 
-alert("I am an alert box4");
-
 /* Larger screens get expanded layer control and visible sidebar */
 if (document.body.clientWidth <= 767) {
   var isCollapsed = true;
@@ -444,7 +436,7 @@ $("#searchbox").click(function () {
   $(this).select();
 });
 
-alert("I am an alert box5");
+alert("I am an alert box1");
 
 /* Prevent hitting enter from refreshing the page */
 $("#searchbox").keypress(function (e) {
@@ -466,6 +458,8 @@ $(document).one("ajaxStop", function () {
   featureList = new List("features", {valueNames: ["feature-name"]});
   featureList.sort("feature-name", {order:"asc"});
 
+  alert("I am an alert box2");
+  
   var boroughsBH = new Bloodhound({
     name: "Boroughs",
     datumTokenizer: function (d) {
@@ -531,7 +525,7 @@ $(document).one("ajaxStop", function () {
   museumsBH.initialize();
   geonamesBH.initialize();
 
-  alert("I am an alert box6");
+  alert("I am an alert box3");
   
   /* instantiate the typeahead UI */
   $("#searchbox").typeahead({
@@ -569,6 +563,9 @@ $(document).one("ajaxStop", function () {
       header: "<h4 class='typeahead-header'><img src='assets/img/globe.png' width='25' height='25'>&nbsp;GeoNames</h4>"
     }
   }).on("typeahead:selected", function (obj, datum) {
+    
+    alert("I am an alert box3");
+    
     if (datum.source === "Boroughs") {
       map.fitBounds(datum.bounds);
     }
