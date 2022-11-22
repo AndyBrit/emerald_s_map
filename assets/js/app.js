@@ -436,8 +436,6 @@ $("#searchbox").click(function () {
   $(this).select();
 });
 
-alert("I am an alert box1");
-
 /* Prevent hitting enter from refreshing the page */
 $("#searchbox").keypress(function (e) {
   if (e.which == 13) {
@@ -457,8 +455,6 @@ $(document).one("ajaxStop", function () {
   map.fitBounds(boroughs.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
   featureList.sort("feature-name", {order:"asc"});
-
-  alert("I am an alert box2");
   
   var boroughsBH = new Bloodhound({
     name: "Boroughs",
@@ -524,8 +520,6 @@ $(document).one("ajaxStop", function () {
   theatersBH.initialize();
   museumsBH.initialize();
   geonamesBH.initialize();
-
-  alert("I am an alert box3");
   
   /* instantiate the typeahead UI */
   $("#searchbox").typeahead({
@@ -563,9 +557,6 @@ $(document).one("ajaxStop", function () {
       header: "<h4 class='typeahead-header'><img src='assets/img/globe.png' width='25' height='25'>&nbsp;GeoNames</h4>"
     }
   }).on("typeahead:selected", function (obj, datum) {
-    
-    alert("I am an alert box3");
-    
     if (datum.source === "Boroughs") {
       map.fitBounds(datum.bounds);
     }
