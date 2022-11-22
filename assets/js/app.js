@@ -326,6 +326,8 @@ map.on("overlayadd", function(e) {
   }
 });
 
+alert("I am an alert box1");
+
 map.on("overlayremove", function(e) {
   if (e.layer === theaterLayer) {
     markerClusters.removeLayer(theaters);
@@ -336,6 +338,8 @@ map.on("overlayremove", function(e) {
     syncSidebar();
   }
 });
+
+alert("I am an alert box2");
 
 /* Filter sidebar feature list to only show features in current map bounds */
 map.on("moveend", function (e) {
@@ -368,7 +372,7 @@ attributionControl.onAdd = function (map) {
 };
 map.addControl(attributionControl);
 
-alert("I am an alert box!");
+alert("I am an alert box3");
 
 var zoomControl = L.control.zoom({
   position: "bottomright"
@@ -406,6 +410,8 @@ var locateControl = L.control.locate({
   }
 }).addTo(map);
 
+alert("I am an alert box4");
+
 /* Larger screens get expanded layer control and visible sidebar */
 if (document.body.clientWidth <= 767) {
   var isCollapsed = true;
@@ -437,6 +443,8 @@ var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
 $("#searchbox").click(function () {
   $(this).select();
 });
+
+alert("I am an alert box5");
 
 /* Prevent hitting enter from refreshing the page */
 $("#searchbox").keypress(function (e) {
@@ -523,6 +531,8 @@ $(document).one("ajaxStop", function () {
   museumsBH.initialize();
   geonamesBH.initialize();
 
+  alert("I am an alert box6");
+  
   /* instantiate the typeahead UI */
   $("#searchbox").typeahead({
     minLength: 3,
