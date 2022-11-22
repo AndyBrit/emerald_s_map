@@ -417,13 +417,13 @@ var baseLayers = {
 };
 
 var groupedOverlays = {
-  "Points of Interest": {
-    "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theaterLayer,
-    "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer
+  "Локації": {
+    "<img src='assets/img/Damage.png' width='24' height='28'>&nbsp;Точки екошкоди": theaterLayer,
+    /* "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer */
   },
-  "Reference": {
-    "Boroughs": boroughs,
-    "Subway Lines": subwayLines
+  "Межі смарагдових зон": {
+    "Зони": boroughs,
+  /*  "Subway Lines": subwayLines */
   }
 };
 
