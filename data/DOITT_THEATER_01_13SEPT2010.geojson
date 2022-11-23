@@ -4,9 +4,9 @@
 "features": [
 { "type": "Feature", "id": 0, "properties": { "NAME": "Буча", "TEL": null, "URL": "https:\/\/www.bucha-rada.gov.ua\/", "ADDRESS1": "50.5523, 30.2103", "ADDRES2": null, "CITY": null, "ZIP": null }, "geometry": { "type": "Point", "coordinates": [ 30.2103, 50.5523 ] } }
 ,
-{ "type": "Feature", "id": 0, "properties": { "NAME": "Гостомель", "TEL": null, "URL": "https:\/\/www.gostomel-rada.gov.ua\/", "ADDRESS1": "50.5867, 30.2598", "ADDRES2": null, "CITY": null, "ZIP": null }, "geometry": { "type": "Point", "coordinates": [ 30.2598, 50.5867 ] } }
+{ "type": "Feature", "id": 1, "properties": { "NAME": "Гостомель", "TEL": null, "URL": "https:\/\/www.gostomel-rada.gov.ua\/", "ADDRESS1": "50.5867, 30.2598", "ADDRES2": null, "CITY": null, "ZIP": null }, "geometry": { "type": "Point", "coordinates": [ 30.2598, 50.5867 ] } }
 ,  
-{ "type": "Feature", "id": 1, "properties": { "NAME": "Маріуполь", "TEL": null, "URL": "http:\/\/mariupolrada.gov.ua\/", "ADDRESS1": "47.100, 37.579", "ADDRES2": null, "CITY": null, "ZIP": null }, "geometry": { "type": "Point", "coordinates": [ 37.579, 47.100 ] } }
+{ "type": "Feature", "id": 2, "properties": { "NAME": "Маріуполь", "TEL": null, "URL": "http:\/\/mariupolrada.gov.ua\/", "ADDRESS1": "47.100, 37.579", "ADDRES2": null, "CITY": null, "ZIP": null }, "geometry": { "type": "Point", "coordinates": [ 37.579, 47.100 ] } }
 
 
 ]
