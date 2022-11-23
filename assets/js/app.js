@@ -223,7 +223,7 @@ var markerClusters = new L.MarkerClusterGroup({
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove theaters to markerClusters layer */
 var theaterLayer = L.geoJson(null);
-var theaters = L.geoJson(null, {
+var theaters = L.geowebsitewebsitewebsitewebsiteJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {
       icon: L.icon({
@@ -238,7 +238,7 @@ var theaters = L.geoJson(null, {
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
-      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADDRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
+      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Місцевість</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Характер екошкоди</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Координати</th><td>" + feature.properties.ADDRESS1 + "</td></tr>" + "<tr><th>Медіадані</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
       layer.on({
         click: function (e) {
           $("#feature-title").html(feature.properties.NAME);
