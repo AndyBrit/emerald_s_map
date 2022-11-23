@@ -2,7 +2,7 @@
 "type": "FeatureCollection",
                                                                                 
 "features": [
-{ "type": "Feature", "id": 0, "properties": { "NAME": "Буча", "TEL": null, "URL": "https:\/\/www.bucha-rada.gov.ua\/", "ADDRESS1": "50.5514,30.2103", "ADDRES2": null, "CITY": null, "ZIP": null }, "geometry": { "type": "Point", "coordinates": [ 30.2598, 50.5867 ] } }
+{ "type": "Feature", "id": 0, "properties": { "NAME": "Буча", "TEL": null, "URL": "https:\/\/www.bucha-rada.gov.ua\/", "ADDRESS1": "30.2103, 50.5523", "ADDRES2": null, "CITY": null, "ZIP": null }, "geometry": { "type": "Point", "coordinates": [ 30.2598, 50.5867 ] } }
 ,
 { "type": "Feature", "id": 0, "properties": { "NAME": "Гостомель", "TEL": null, "URL": "https:\/\/www.gostomel-rada.gov.ua\/", "ADDRESS1": "30.2598, 50.5867", "ADDRES2": null, "CITY": null, "ZIP": null }, "geometry": { "type": "Point", "coordinates": [ 30.2598, 50.5867 ] } }
 ,  
