@@ -418,7 +418,7 @@ var baseLayers = {
 
 var groupedOverlays = {
   "Локації": {
-    "<img src='assets/img/Damage.png' width='24' height='28'>&nbsp;Точки екошкоди": theaterLayer,
+    "<img src='assets/img/damage.png' width='24' height='28'>&nbsp;Точки екошкоди": theaterLayer,
     /* "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer */
   },
   "Межі смарагдових зон": {
