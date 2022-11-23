@@ -363,7 +363,7 @@ var attributionControl = L.control({
 });
 attributionControl.onAdd = function (map) {
   var div = L.DomUtil.create("div", "leaflet-control-attribution");
-  div.innerHTML = "<span class='hidden-xs'>Developed by <a href='http://bryanmcbride.com'>bryanmcbride.com</a> | </span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
+  div.innerHTML = "<span class='hidden-xs'>Developed by <a href='http://andybrit.github.io/emerald_s_map/#'>bryan</a></span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'></a>";
   return div;
 };
 map.addControl(attributionControl);
