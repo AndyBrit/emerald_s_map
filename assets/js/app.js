@@ -406,8 +406,8 @@ if (document.body.clientWidth <= 767) {
 }
 
 var baseLayers = {
-  "Міжнародна транскрипція": cartoLight,
-  "Українська транскрипція": usgsImagery
+  "Map (EN)": cartoLight,
+  "Карта (UA)": usgsImagery
 };
 
 var groupedOverlays = {
