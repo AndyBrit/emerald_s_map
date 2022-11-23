@@ -95,7 +95,7 @@ function syncSidebar() {
   theaters.eachLayer(function (layer) {
     if (map.hasLayer(theaterLayer)) {
       if (map.getBounds().contains(layer.getLatLng())) {
-        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/theater.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/damage.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       }
     }
   });
@@ -144,7 +144,7 @@ var highlightStyle = {
 var boroughs = L.geoJson(null, {
   style: function (feature) {
     return {
-      color: "black",
+      color: "green",
       fill: false,
       opacity: 1,
       clickable: false
@@ -227,7 +227,7 @@ var theaters = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {
       icon: L.icon({
-        iconUrl: "assets/img/theater.png",
+        iconUrl: "assets/img/damage.png",
         iconSize: [24, 28],
         iconAnchor: [12, 28],
         popupAnchor: [0, -25]
@@ -247,7 +247,7 @@ var theaters = L.geoJson(null, {
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
         }
       });
-      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/theater.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/damage.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       theaterSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADDRESS1,
@@ -363,7 +363,7 @@ var attributionControl = L.control({
 });
 attributionControl.onAdd = function (map) {
   var div = L.DomUtil.create("div", "leaflet-control-attribution");
-  div.innerHTML = "<span class='hidden-xs'>Developed by Instech Co</a>";
+  div.innerHTML = "<span class='hidden-xs'>Developed by <a href='http://andybrit.github.io/emerald_s_map/#'>bryan</a></span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'></a>";
   return div;
 };
 map.addControl(attributionControl);
@@ -413,14 +413,18 @@ if (document.body.clientWidth <= 767) {
 
 var baseLayers = {
   "Карта-схема": cartoLight,
-
+  /*"Aerial Imagery": usgsImagery */
 };
 
 var groupedOverlays = {
-  "Смарагдова мережа": {
-    "<img src='assets/img/favicon-76.png' width='24' height='28'>&nbsp;Місця екошкоди": theaterLayer,
-
+  "Локації": {
+    "<img src='assets/img/damage.png' width='24' height='28'>&nbsp;Точки екошкоди": theaterLayer,
+    /* "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer */
   },
+  "Межі смарагдових зон": {
+    "Зони": boroughs,
+  /*  "Subway Lines": subwayLines */
+  }
 };
 
 var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
@@ -451,7 +455,7 @@ $(document).one("ajaxStop", function () {
   map.fitBounds(boroughs.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
   featureList.sort("feature-name", {order:"asc"});
-
+  
   var boroughsBH = new Bloodhound({
     name: "Boroughs",
     datumTokenizer: function (d) {
@@ -516,7 +520,7 @@ $(document).one("ajaxStop", function () {
   theatersBH.initialize();
   museumsBH.initialize();
   geonamesBH.initialize();
-
+  
   /* instantiate the typeahead UI */
   $("#searchbox").typeahead({
     minLength: 3,
@@ -534,7 +538,7 @@ $(document).one("ajaxStop", function () {
     displayKey: "name",
     source: theatersBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'><img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters</h4>",
+      header: "<h4 class='typeahead-header'><img src='assets/img/damage.png' width='24' height='28'>&nbsp;Theaters</h4>",
       suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
   }, {
